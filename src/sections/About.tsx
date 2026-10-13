@@ -8,9 +8,9 @@ export function About() {
   const ref = useReveal<HTMLDivElement>()
 
   return (
-    <section id="about" aria-labelledby="about-title" className="bg-white py-16 sm:py-24">
+    <section id="about" aria-labelledby="about-title" className="bg-surface py-16 sm:py-24">
       <div ref={ref} className="reveal container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className="overflow-hidden rounded-[1.75rem] bg-beige">
+        <div className="overflow-hidden rounded-[1.75rem] bg-soft">
           <img
             src={about}
             srcSet={`${aboutSmall} 720w, ${about} 1280w`}
@@ -29,7 +29,7 @@ export function About() {
           <h2 id="about-title" className="font-display text-[2rem] leading-[1.1] sm:text-5xl">
             {t.about.title}
           </h2>
-          <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-charcoal/80 sm:text-lg">
+          <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-ink/80 sm:text-lg">
             {t.about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

@@ -72,7 +72,7 @@ export const menu: MenuItem[] = [
     image: img(lula, lulaSm),
   },
   {
-    id: 'charcoal-potato',
+    id: 'ink-potato',
     category: 'sides',
     name: { ru: 'Картофель на углях' },
     description: { ru: 'Запечённый картофель с золотистой корочкой и укропом.' },

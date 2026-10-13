@@ -15,12 +15,12 @@ export function MobileCartBar() {
         type="button"
         onClick={open}
         aria-label={t.cart.openWithCount(count)}
-        className="flex h-14 w-full items-center justify-between rounded-full bg-burgundy px-5 text-white shadow-lg shadow-charcoal/15 transition-colors hover:bg-burgundy-dark"
+        className="flex h-14 w-full items-center justify-between rounded-full bg-accent px-5 text-on-accent shadow-lg shadow-black/40 transition-colors hover:bg-accent-strong"
       >
         <span className="flex items-center gap-2.5 font-medium">
           <ShoppingBag size={19} aria-hidden="true" />
           {t.cart.bar}
-          <span className="grid h-6 min-w-6 place-items-center rounded-full bg-white/20 px-1.5 text-xs font-semibold tabular-nums">
+          <span className="grid h-6 min-w-6 place-items-center rounded-full bg-black/15 px-1.5 text-xs font-semibold tabular-nums">
             {count}
           </span>
         </span>

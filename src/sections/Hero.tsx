@@ -27,13 +27,13 @@ export function Hero({ onOrder }: { onOrder: () => void }) {
             </button>
           </div>
 
-          <p className="mt-9 flex items-center gap-2.5 text-sm text-charcoal/75">
-            <Flame size={17} className="text-burgundy" aria-hidden="true" />
+          <p className="mt-9 flex items-center gap-2.5 text-sm text-ink/75">
+            <Flame size={17} className="text-accent" aria-hidden="true" />
             {t.hero.note}
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-[1.75rem] bg-beige lg:rounded-[2.25rem]">
+        <div className="overflow-hidden rounded-[1.75rem] bg-soft lg:rounded-[2.25rem]">
           <img
             src={hero}
             srcSet={`${heroSmall} 960w, ${hero} 1920w`}

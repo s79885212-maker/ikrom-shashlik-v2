@@ -8,8 +8,8 @@ import { useI18n } from '../i18n'
 
 function Row({ icon, label, children }: { icon: ReactNode; label: string; children: ReactNode }) {
   return (
-    <div className="flex gap-4 border-t border-charcoal/10 py-4">
-      <span className="mt-0.5 text-burgundy">{icon}</span>
+    <div className="flex gap-4 border-t border-ink/10 py-4">
+      <span className="mt-0.5 text-accent">{icon}</span>
       <div className="min-w-0">
         <dt className="text-sm text-muted">{label}</dt>
         <dd className="mt-0.5 text-[17px] break-words">{children}</dd>
@@ -20,10 +20,10 @@ function Row({ icon, label, children }: { icon: ReactNode; label: string; childr
 
 /** Пометка на месте данных, которые ресторан ещё не предоставил */
 const Placeholder = ({ children }: { children: ReactNode }) => (
-  <span className="text-charcoal/55 italic">{children}</span>
+  <span className="text-ink/55 italic">{children}</span>
 )
 
-const linkClass = 'underline decoration-charcoal/30 underline-offset-4 transition-colors hover:text-burgundy'
+const linkClass = 'underline decoration-ink/30 underline-offset-4 transition-colors hover:text-accent'
 
 export function Contact() {
   const { t } = useI18n()
@@ -33,12 +33,12 @@ export function Contact() {
   const iconProps = { size: 20, strokeWidth: 1.6, 'aria-hidden': true } as const
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="bg-white py-16 sm:py-24">
+    <section id="contact" aria-labelledby="contact-title" className="bg-surface py-16 sm:py-24">
       <div ref={ref} className="reveal container-page grid gap-10 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading id="contact-title" eyebrow={c.eyebrow} title={c.title} subtitle={c.subtitle} />
 
-          <dl className="mt-8 border-b border-charcoal/10">
+          <dl className="mt-8 border-b border-ink/10">
             <Row icon={<MapPin {...iconProps} />} label={c.address}>
               {address ?? <Placeholder>{c.placeholder.address}</Placeholder>}
             </Row>
@@ -105,7 +105,7 @@ export function Contact() {
           )}
         </div>
 
-        <div className="min-h-72 overflow-hidden rounded-[1.75rem] bg-beige/60 lg:min-h-full">
+        <div className="min-h-72 overflow-hidden rounded-[1.75rem] bg-soft/60 lg:min-h-full">
           {mapEmbedUrl ? (
             <iframe
               src={mapEmbedUrl}
@@ -115,9 +115,9 @@ export function Contact() {
               className="size-full min-h-72 border-0"
             />
           ) : (
-            <div className="flex size-full min-h-72 flex-col items-center justify-center gap-3 border border-dashed border-charcoal/20 p-8 text-center rounded-[1.75rem]">
-              <MapPin size={30} strokeWidth={1.4} className="text-burgundy" aria-hidden="true" />
-              <p className="max-w-[16rem] text-charcoal/65">{c.mapPlaceholder}</p>
+            <div className="flex size-full min-h-72 flex-col items-center justify-center gap-3 border border-dashed border-ink/20 p-8 text-center rounded-[1.75rem]">
+              <MapPin size={30} strokeWidth={1.4} className="text-accent" aria-hidden="true" />
+              <p className="max-w-[16rem] text-ink/65">{c.mapPlaceholder}</p>
             </div>
           )}
         </div>

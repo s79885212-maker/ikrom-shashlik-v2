@@ -9,7 +9,7 @@ export function CartItems() {
   const { lines, setQuantity, remove } = useCart()
 
   return (
-    <ul className="divide-y divide-charcoal/10">
+    <ul className="divide-y divide-ink/10">
       {lines.map(({ item, quantity, lineTotal }) => {
         const name = tr(item.name)
         return (
@@ -20,7 +20,7 @@ export function CartItems() {
               width={72}
               height={72}
               loading="lazy"
-              className="size-[72px] shrink-0 rounded-xl bg-beige object-cover"
+              className="size-[72px] shrink-0 rounded-xl bg-soft object-cover"
             />
             <div className="flex min-w-0 flex-1 flex-col gap-2.5">
               <div className="flex items-start justify-between gap-2">
@@ -34,7 +34,7 @@ export function CartItems() {
                   type="button"
                   onClick={() => remove(item.id)}
                   aria-label={t.cart.remove(name)}
-                  className="-mt-2 -mr-2 grid size-10 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-beige hover:text-burgundy"
+                  className="-mt-2 -mr-2 grid size-10 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-soft hover:text-accent"
                 >
                   <Trash2 size={17} aria-hidden="true" />
                 </button>

@@ -18,8 +18,8 @@ export function Features() {
           {t.features.items.map((feature, index) => {
             const Icon = icons[index]
             return (
-              <li key={feature.title} className="border-t border-charcoal/15 pt-6">
-                <Icon size={28} strokeWidth={1.4} className="text-burgundy" aria-hidden="true" />
+              <li key={feature.title} className="border-t border-ink/15 pt-6">
+                <Icon size={28} strokeWidth={1.4} className="text-accent" aria-hidden="true" />
                 <h3 className="mt-5 text-lg font-semibold">{feature.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{feature.text}</p>
               </li>

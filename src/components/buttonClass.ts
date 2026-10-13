@@ -4,9 +4,9 @@ type Variant = 'primary' | 'outline' | 'light'
 type Size = 'sm' | 'md'
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-burgundy text-white hover:bg-burgundy-dark',
-  outline: 'border border-charcoal/25 text-charcoal hover:border-charcoal/70',
-  light: 'bg-cream text-charcoal hover:bg-white',
+  primary: 'bg-accent text-on-accent hover:bg-accent-strong',
+  outline: 'border border-ink/25 text-ink hover:border-ink/70',
+  light: 'bg-ground text-ink hover:bg-surface',
 }
 
 const sizes: Record<Size, string> = {

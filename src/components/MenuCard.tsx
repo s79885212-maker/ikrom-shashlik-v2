@@ -19,8 +19,8 @@ export function MenuCard({ item, onAdded }: Props) {
   const [smallWidth, largeWidth] = item.image.widths
 
   return (
-    <li className="group flex flex-col overflow-hidden rounded-2xl bg-white">
-      <div className="aspect-[4/3] overflow-hidden bg-beige">
+    <li className="group flex flex-col overflow-hidden rounded-2xl bg-surface">
+      <div className="aspect-[4/3] overflow-hidden bg-soft">
         <img
           src={item.image.src}
           srcSet={`${item.image.srcSmall} ${smallWidth}w, ${item.image.src} ${largeWidth}w`}

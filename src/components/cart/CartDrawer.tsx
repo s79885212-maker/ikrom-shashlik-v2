@@ -162,13 +162,13 @@ export function CartDrawer() {
   )
 
   const summaryRow = (label: string, value: string, strong = false) => (
-    <div className={cx('flex items-baseline justify-between gap-4', strong ? 'text-lg font-semibold' : 'text-[15px] text-charcoal/80')}>
+    <div className={cx('flex items-baseline justify-between gap-4', strong ? 'text-lg font-semibold' : 'text-[15px] text-ink/80')}>
       <dt>{label}</dt>
       <dd className="tabular-nums">{value}</dd>
     </div>
   )
 
-  const footerClass = 'border-t border-charcoal/10 bg-cream px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:px-7'
+  const footerClass = 'border-t border-ink/10 bg-ground px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:px-7'
   const bodyClass = 'flex-1 overflow-y-auto overscroll-contain px-5 py-6 sm:px-7'
 
   return (
@@ -177,10 +177,10 @@ export function CartDrawer() {
       aria-labelledby="cart-title"
       onClose={handleClose}
       onClick={(event) => event.target === dialogRef.current && handleClose()}
-      className="cart-dialog fixed inset-0 m-0 ml-auto h-dvh max-h-none w-full max-w-none bg-cream text-charcoal sm:max-w-[28rem]"
+      className="cart-dialog fixed inset-0 m-0 ml-auto h-dvh max-h-none w-full max-w-none bg-ground text-ink sm:max-w-[28rem]"
     >
       <div className="flex h-full flex-col">
-        <div className="border-b border-charcoal/10 px-5 pt-4 pb-4 sm:px-7">
+        <div className="border-b border-ink/10 px-5 pt-4 pb-4 sm:px-7">
           <div className="flex items-center justify-between gap-4">
             <h2 id="cart-title" ref={headingRef} tabIndex={-1} className="font-display text-2xl outline-none">
               {title}
@@ -189,7 +189,7 @@ export function CartDrawer() {
               type="button"
               onClick={handleClose}
               aria-label={t.cart.close}
-              className="-mr-2 grid size-11 place-items-center rounded-full transition-colors hover:bg-beige"
+              className="-mr-2 grid size-11 place-items-center rounded-full transition-colors hover:bg-soft"
             >
               <X size={22} aria-hidden="true" />
             </button>
@@ -200,9 +200,9 @@ export function CartDrawer() {
                 <li
                   key={item.id}
                   aria-current={index === stepIndex ? 'step' : undefined}
-                  className={cx('flex flex-1 flex-col gap-1.5', index <= stepIndex ? 'text-charcoal' : 'text-charcoal/45')}
+                  className={cx('flex flex-1 flex-col gap-1.5', index <= stepIndex ? 'text-ink' : 'text-ink/45')}
                 >
-                  <span className={cx('h-0.5 rounded-full', index <= stepIndex ? 'bg-burgundy' : 'bg-charcoal/15')} />
+                  <span className={cx('h-0.5 rounded-full', index <= stepIndex ? 'bg-accent' : 'bg-ink/15')} />
                   <span className={index === stepIndex ? 'font-semibold' : undefined}>{item.label}</span>
                 </li>
               ))}
@@ -213,7 +213,7 @@ export function CartDrawer() {
         {activeStep === 'cart' &&
           (isEmpty ? (
             <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-              <span className="grid size-16 place-items-center rounded-full bg-beige text-burgundy">
+              <span className="grid size-16 place-items-center rounded-full bg-soft text-accent">
                 <ShoppingBag size={26} strokeWidth={1.5} aria-hidden="true" />
               </span>
               <p className="mt-5 text-lg font-semibold">{t.cart.emptyTitle}</p>
@@ -240,7 +240,7 @@ export function CartDrawer() {
           <form noValidate onSubmit={handleDetailsSubmit} className="flex min-h-0 flex-1 flex-col">
             <div data-scroll className={bodyClass}>
               {Object.keys(errors).length > 0 && (
-                <p role="alert" className="mb-5 rounded-xl bg-red-800/10 px-4 py-3 text-sm text-red-900">
+                <p role="alert" className="mb-5 rounded-xl bg-red-400/10 px-4 py-3 text-sm text-red-300">
                   {t.form.errorSummary}
                 </p>
               )}
@@ -287,12 +287,12 @@ export function CartDrawer() {
                 </ul>
               </section>
 
-              <section aria-labelledby="review-contact" className="border-t border-charcoal/10 pt-5">
+              <section aria-labelledby="review-contact" className="border-t border-ink/10 pt-5">
                 <div className="mb-3 flex items-center justify-between">
                   <h3 id="review-contact" className="eyebrow">
                     {t.review.contact}
                   </h3>
-                  <button type="button" onClick={() => goTo('details')} className="text-sm font-medium text-burgundy underline-offset-4 hover:underline">
+                  <button type="button" onClick={() => goTo('details')} className="text-sm font-medium text-accent underline-offset-4 hover:underline">
                     {t.review.edit}
                   </button>
                 </div>
@@ -366,7 +366,7 @@ export function CartDrawer() {
                     cart.clear()
                     handleClose()
                   }}
-                  className="h-10 text-sm text-muted underline-offset-4 hover:text-burgundy hover:underline"
+                  className="h-10 text-sm text-muted underline-offset-4 hover:text-accent hover:underline"
                 >
                   {t.result.clearAndClose}
                 </button>

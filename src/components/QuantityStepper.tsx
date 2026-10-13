@@ -19,12 +19,12 @@ export function QuantityStepper({
   className,
 }: Props) {
   const buttonClass =
-    'grid size-10 place-items-center rounded-full text-charcoal transition-colors hover:bg-beige'
+    'grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-soft'
 
   return (
     <div
       className={cx(
-        'inline-flex h-10 items-center justify-between rounded-full border border-charcoal/15 bg-white',
+        'inline-flex h-10 items-center justify-between rounded-full border border-ink/15 bg-surface',
         className,
       )}
     >

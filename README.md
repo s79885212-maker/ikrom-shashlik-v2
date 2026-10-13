@@ -21,7 +21,7 @@ npm run preview    # просмотр собранной версии
 | Блюда, описания, цены (сейчас примерные) | `src/data/menu.ts` |
 | Фотографии (сейчас временные, с Wikimedia Commons) | `src/assets/images/`, авторы — `src/data/photoCredits.ts` |
 | Тексты интерфейса | `src/i18n/ru.ts` |
-| Фавикон | `public/favicon.svg` |
+| Логотип и фавикон | `src/assets/images/logo.jpg`, `public/favicon.png`, `public/apple-touch-icon.png` |
 
 Пока контакт равен `null`, на сайте стоит пометка «будет указано», а кнопки
 «Позвонить» и «Открыть карту» неактивны. После заполнения они включаются сами.

@@ -13,9 +13,9 @@ interface Props {
 
 const inputClass = (invalid: boolean) =>
   cx(
-    'w-full rounded-xl border bg-white px-4 py-3 text-base text-charcoal placeholder:text-charcoal/40',
-    'transition-colors focus:border-burgundy focus:outline-none focus-visible:outline-none focus:ring-2 focus:ring-burgundy/20',
-    invalid ? 'border-red-700' : 'border-charcoal/15',
+    'w-full rounded-xl border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink/40',
+    'transition-colors focus:border-accent focus:outline-none focus-visible:outline-none focus:ring-2 focus:ring-accent/20',
+    invalid ? 'border-red-400' : 'border-ink/15',
   )
 
 function Field({
@@ -39,7 +39,7 @@ function Field({
       </label>
       {children}
       {error && (
-        <p id={`${id}-error`} className="mt-1.5 text-sm text-red-800">
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-red-400">
           {error}
         </p>
       )}
@@ -107,10 +107,10 @@ export function OrderForm({ customer, errors, onChange }: Props) {
               key={method.value}
               className={cx(
                 'flex h-12 cursor-pointer items-center justify-center gap-2 rounded-xl border text-[15px] font-medium transition-colors',
-                'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-burgundy',
+                'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-accent',
                 customer.method === method.value
-                  ? 'border-burgundy bg-burgundy text-white'
-                  : 'border-charcoal/15 bg-white hover:border-charcoal/40',
+                  ? 'border-accent bg-accent text-on-accent'
+                  : 'border-ink/15 bg-surface hover:border-ink/40',
               )}
             >
               <input

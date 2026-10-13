@@ -22,7 +22,7 @@ export function MenuSection() {
   const items = filter === 'all' ? menu : menu.filter((item) => item.category === filter)
 
   return (
-    <section id="menu" aria-labelledby="menu-title" className="border-t border-charcoal/10 py-16 sm:py-24">
+    <section id="menu" aria-labelledby="menu-title" className="border-t border-ink/10 py-16 sm:py-24">
       <div className="container-page">
         <div ref={headingRef} className="reveal">
           <SectionHeading id="menu-title" title={t.menu.title} subtitle={t.menu.subtitle} />
@@ -40,8 +40,8 @@ export function MenuSection() {
                   className={cx(
                     'h-11 rounded-full border px-5 text-[15px] font-medium whitespace-nowrap transition-colors duration-200',
                     filter === item.id
-                      ? 'border-charcoal bg-charcoal text-cream'
-                      : 'border-charcoal/15 text-charcoal hover:border-charcoal/50',
+                      ? 'border-accent bg-accent text-on-accent'
+                      : 'border-ink/15 text-ink hover:border-ink/50',
                   )}
                 >
                   {item.label}
