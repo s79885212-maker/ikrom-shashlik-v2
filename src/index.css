@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #f8f5ef;
+  --color-charcoal: #20201e;
+  --color-burgundy: #762c2c;
+  --color-burgundy-dark: #5f2222;
+  --color-beige: #e8dfd1;
+  --color-muted: #5f5b54;
+
+  --font-display: 'Yeseva One', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Onest', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream font-sans text-charcoal antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Якорные секции не прячутся под фиксированной шапкой */
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 3px;
+  }
+
+  button:not(:disabled),
+  [role='button'] {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[82rem] px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.18em] text-burgundy uppercase;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Боковая панель корзины на основе <dialog> */
+.cart-dialog {
+  animation: cart-in 0.28s ease;
+}
+
+.cart-dialog::backdrop {
+  background: rgb(32 32 30 / 0.45);
+  animation: fade-in 0.28s ease;
+}
+
+@keyframes cart-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after,
+  .cart-dialog::backdrop {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
